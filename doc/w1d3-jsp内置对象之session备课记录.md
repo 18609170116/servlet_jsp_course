@@ -84,6 +84,58 @@ HttpSession session = request.getSession();
 
 ## 5.登陆案例
 
+```
+见代码
+```
+
+## 6、session监听器
+
+```
+HttpSessionListener					//监听session生命周期中的创建和销毁，见登陆例子中session计数器
+HttpSessionAttributeListener		//session中的setAttribute和removeAttribute时
+HttpSessionBindingListener			//对放入Session当中的对象进行通知
+HttpSessionActivationListener		//用于虚拟机上session的迁移，不讲
+```
+
+### HttpSessionListener
+
+> 先要搞清楚一个容易理解错误的概念：
+>
+> **session的创建一定伴随着用户登陆吗？**
+>
+> 不是的，只要用户开始访问这个网站，就开始了会话，比如，用户在未登陆的时候，把商品添加到购物车中。
+
+```
+详见SessionCounterListener
+```
+
+### HttpSessionAttributeListener
+
+```
+详见SessionAttributeListener
+```
+
+### HttpSessionBindingListener
+
+```
+在User对象上实现该接口
+只有当User对象被加入/被移除到session中时，2个方法才会被调用，会先于AttributeListener
+```
+
+## 7、Cookie
+
+```
+一段数据，以键值对方式，用于在服务端和客户端传送数据。
+起点在服务端并发送给客户端，
+客户端会在第二次访问时把cookie信息返回给服务器
+
+案例：保存用户名，见LoginServlet.java及login.jsp
+```
+
+8、URL重写
+
+当
+
 # 二、重点、难点知识讲解思路
 
 1.使用session的原因
@@ -102,11 +154,17 @@ HttpSession session = request.getSession();
 
 # 三、课堂补充案例
 
-- ​
+- 如果返回的页面中包含有汉字，要先设置response的返回内容类型为
+
+  ```
+  response.setContentType("text/html; charset=utf-8"); 
+  ```
 
 
 # 四、课堂提问准备
 
+-  form的写法？
+-  从request中能得到什么？
 -  ​
 
 

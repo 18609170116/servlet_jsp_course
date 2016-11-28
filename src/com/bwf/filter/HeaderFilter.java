@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("/*")
+@WebFilter("/asdfasdfasdfasdf*")
 public class HeaderFilter implements Filter {
 
 	public void destroy() {

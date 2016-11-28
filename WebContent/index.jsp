@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,7 +39,10 @@
 		<a href="<%=basePath%>/getContextAttr.jsp">ServletContextLister示例</a>
 	</h3>
 	<h3>
-		<a href="<%=basePath%>/#">HeaderFilter</a>
+		<a href="<%=basePath%>/#">HeaderFilter，请查看web.xml</a>
+	</h3>
+	<h3>
+		<a href="<%=basePath%>/login.jsp">登陆例子</a>
 	</h3>
 
 	<br>
