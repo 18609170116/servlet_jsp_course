@@ -132,9 +132,25 @@ HttpSessionActivationListener		//用于虚拟机上session的迁移，不讲
 案例：保存用户名，见LoginServlet.java及login.jsp
 ```
 
-8、URL重写
+## 8、URL重写
 
-当
+当客户端禁用Cookie时，会导致这个天然的session机制的通路中断，这时就需要URL重写了。所谓的重写，就是我们把原来保存在Cookie中的session id想办法加到页面中的每个超链，表单提交等。
+
+幸好，我们可以在JSP中这样做：
+
+当servlet中是以request.getRequestDispatcher("/loginSuccess.jsp").forward(request, response);方式跳转时，我们需要在loginSuccess.jsp中进行如下编码
+
+```
+response.encodeURL(basePath +"/info.jsp");
+```
+
+当Servlet中以response.sendRedirect(s);方式跳转时，这样
+
+```
+response.sendRedirect(response.encodeRedirectURL("/info.jsp"));
+```
+
+以实例演示：当用户已登陆的情况下，点击某个超链接，显示登陆用户名。
 
 # 二、重点、难点知识讲解思路
 
@@ -165,7 +181,7 @@ HttpSessionActivationListener		//用于虚拟机上session的迁移，不讲
 
 -  form的写法？
 -  从request中能得到什么？
--  ​
+-  两种页面跳转方式？
 
 
 # 五、课后补充作业
