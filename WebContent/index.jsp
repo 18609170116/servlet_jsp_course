@@ -44,6 +44,9 @@
 	<h3>
 		<a href="<%=basePath%>/login.jsp">登陆例子</a>
 	</h3>
+	<h3>
+		<a href="<%=basePath%>/ELServlet?name=123&hobby=book&hobby=e-sports">EL表达式</a>
+	</h3>
 
 
 	<br>

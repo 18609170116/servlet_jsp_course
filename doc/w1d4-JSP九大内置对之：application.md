@@ -85,15 +85,24 @@ public void _jspInit() {
         }
 ```
 
-## 4.JSP中的隐式对象
+## 4.JSP中的9大内置对象
 
 ```
-application  //应用上下文范围        			  对应于Servlet中的ServletContext
-request		 //请求范围              			对应于Servlet中的request
-session      //会话范围              			对应于Servlet中的session
-pageContext  //任意作用域内的属性，通过它能够取得以上3个范围内的属性和页面内的属性。Servlet无对应项
 
-pageContext.setAttribute("foo","bar",PageContext.***Scope);
+request		 //请求范围					对应于Servlet中的request
+response	 //响应                    对应于Servlet中的response
+page		 //页面范围                 Servlet无对应项
+session      //会话范围              	对应于Servlet中的session
+application  //应用上下文范围        	 对应于Servlet中的ServletContext
+out
+config
+exception
+pageContext  //任意作用域内的属性，通过它能够取得以上4个范围内的属性和页面内的属性。Servlet无对应项
+
+
+pageContext.setAttribute("attr", "attr in pageScope", PageContext.PAGE_SCOPE);
+
+如果记不住，随便打开一个jsp文件对应的java源码, 在_jspService()方法开头就声明了这9大内置对象
 
 如何使用呢，看例子
 ```
@@ -106,7 +115,7 @@ pageContext.setAttribute("foo","bar",PageContext.***Scope);
 
 # 三、课堂补充案例
 
-- 书
+- ​
 
 
 

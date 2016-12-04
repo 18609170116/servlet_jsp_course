@@ -12,6 +12,9 @@
 	out.print(application.getAttribute("author"));
 %>
 	@copyright
+	
+	<hr>
+	EL表达式取得作者名称：${author}
 
 </body>
 </html>
