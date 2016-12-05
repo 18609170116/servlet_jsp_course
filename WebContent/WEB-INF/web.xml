@@ -5,12 +5,12 @@
 	version="3.0">
 
 	<!-- 让jsp页面中不对el表达式报错 -->
-	<jsp-config>
+<!-- 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
 			<el-ignored>true</el-ignored>
 		</jsp-property-group>
-	</jsp-config>
+	</jsp-config> -->
 	<!-- 或者在jsp页首加入 <%@ page isELIgnored="false"%> -->
 
 	<listener>

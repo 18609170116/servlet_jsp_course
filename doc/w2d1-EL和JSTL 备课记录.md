@@ -64,23 +64,24 @@ JSTL支持通用的、结构化的任务，比如迭代，条件判断，XML文�
 
 根据JSTL标签所提供的功能，可以将其分为5个类别。
 
-- **核心标签**
-- **格式化标签**
-- **SQL 标签**
-- **XML 标签**
-- **JSTL 函数**
+- **核心标签**[重点]  
+- 格式化标签
+- SQL 标签
+- XML 标签
+- JSTL 函数
 
 ### 2. 2安装
 
 ```
-从tomcat5开始，已内置，对应库文件为jstl.jar和standard.jar
+从tomcat5开始，已内置，对应库文件为jstl.jar和standard.jar,只要项目中设置了server为tomcat就自动加载了。
 ```
 
 ### 2.3引入
 
 ```
 页面头部引入
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+prefix属性表示简记为c，方便在jsp中使用
 ```
 
 ## 3.常用标记
@@ -101,7 +102,7 @@ JSTL支持通用的、结构化的任务，比如迭代，条件判断，XML文�
 | default   | 输出的默认值      | 否        | 主体中的内容  |
 | escapeXml | 是否忽略XML特殊字符 | 否        | true    |
 
-示例
+示例 jstl.jsp
 
 ```
 <c:out value="&lt要显示的数据对象（未使用转义字符）&gt" escapeXml="true" default="默认值"></c:out><br/>
@@ -110,19 +111,18 @@ JSTL支持通用的、结构化的任务，比如迭代，条件判断，XML文�
 <c:out value="<c:out /> Tag"></c:out>
 ```
 
-### 3.2 set标记
+### 3.2 set 标记
 
 ```
-<c:set>标签用于设置变量值和对象属性。
+<c:set>标记用于设置变量值和对象属性。
 ```
 
-```
-
-```
+示例：jstl.jsp
 
 ### 3.3 remove标记
 
 ```
+<c:remove>标记用于移除变量值和对象属性。
 
 ```
 
@@ -133,19 +133,19 @@ JSTL支持通用的、结构化的任务，比如迭代，条件判断，XML文�
 
 ```
 
-3.2 条件标记if choose when otherwise
+### 3.5 条件标记if choose when otherwise
 
 ```
 
 ```
 
-3.3 循环标记 forEach forToken
+### 3.6 循环标记 forEach forToken
 
 ```
 
 ```
 
-3.4 与URL相关的 url
+### 3.7 与URL相关的 url
 
 ```
 
