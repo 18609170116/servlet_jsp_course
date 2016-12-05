@@ -18,7 +18,7 @@ ${person.name}
 
 ![EL1](C:\MY_JOB\GitHub\servlet_jsp_course\WebContent\img\EL1.jpg)
 
-### 1.2怎么用
+### 1.2用EL表达式访问属性
 
 EL表达式有两种操作符
 
@@ -91,7 +91,7 @@ prefix属性表示简记为c，方便在jsp中使用
 ### 3.1 out标记
 
 ```
-<c:out>标签用来显示一个表达式的结果，与<%= %>作用相似
+<c:out>标签用来显示一个表达式的结果，与<%= %>作用相似,但比out强大
 ```
 
 属性
@@ -115,6 +115,9 @@ prefix属性表示简记为c，方便在jsp中使用
 
 ```
 <c:set>标记用于设置变量值和对象属性。
+	<c:set var="salary" scope="page" value="${2000*2}" />
+	<c:set var="salary" scope="session" value="8万" />
+	<c:set target="${map}" property="school" value="成都博为峰"></c:set>
 ```
 
 示例：jstl.jsp
@@ -123,53 +126,65 @@ prefix属性表示简记为c，方便在jsp中使用
 
 ```
 <c:remove>标记用于移除变量值和对象属性。
-
 ```
 
 ### 3.4 catch标记
 
 ```
 
-
 ```
 
-### 3.5 条件标记if choose when otherwise
+### 3.5 条件标记c:if 
 
 ```
-
+ 			<c:if test="${i>3 }">
+				比3大
+			</c:if>
 ```
 
-### 3.6 循环标记 forEach forToken
+### 3.6 条件标记c:choose
+
+也是一个条件标记，它比c:if更强大，里面可以包含c:when和c:otherwise标记，一般是组合使用，有点像switch-case-default
 
 ```
-
+			<c:choose>
+				<c:when test="${i<3}">比3小</c:when>
+				<c:when test="${i<5}">比5小</c:when>
+				<c:when test="${i==5}">OK,刚好是5</c:when>
+				<c:otherwise>比5大</c:otherwise>
+			</c:choose>
 ```
 
-### 3.7 与URL相关的 url
+### 3.7 循环标记 forEach forToken
+
+forEach故名思义，它是用来做迭代的。可以接受多种集合类型
 
 ```
-
+见示例jstl.jsp
 ```
 
-## 4.
+forToken主要用来做分割,有点像String.split()
 
 ```
-
+示例jstl.jsp
 ```
 
 # 二、重点、难点知识讲解思路
 
-1.
+1.EL表达式语法及用法。
+
+2、JSTL标准标记库中的常用标记。
 
 # 三、课堂补充案例
 
-- ​
+- 示例
 
 
 
 # 四、课堂提问准备
 
--  ​
+-  没有EL之前，在页面输出时怎么做的呢？
+-  如何用c:forEach迭代Map对象(Map中存放有User对象)，获得username呢？
 
 
 # 五、课后补充作业
