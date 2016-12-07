@@ -3,14 +3,15 @@
   <listener>
     <listener-class>com.bwf.listener.AppListener</listener-class>
   </listener>
-  <context-param>
+    <context-param>
     <param-name>tel</param-name>
     <param-value>88888888</param-value>
   </context-param>
-  <context-param>
+    <context-param>
     <param-name>author</param-name>
     <param-value>梁广明</param-value>
   </context-param>
+  
   <servlet>
     <servlet-name>initParam</servlet-name>
     <servlet-class>com.bwf.InitParamServlet</servlet-class>
